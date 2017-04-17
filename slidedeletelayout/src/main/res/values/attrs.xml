@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--侧滑删除-->
+    <declare-styleable name="SlideDeleteLayout">
+        <!--是否可以通过滑动，显示删除菜单，默认true-->
+        <attr name="slideEnable" format="boolean"/>
+        <!--是否是ios方式的滑动方式,默认true-->
+        <attr name="iosStyle" format="boolean"/>
+        <!--标记是左滑还是右滑显示删除菜单，默认左滑显示删除菜单-->
+        <attr name="leftSlide" format="boolean"/>
+    </declare-styleable>
+</resources>
