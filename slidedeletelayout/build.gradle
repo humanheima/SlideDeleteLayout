@@ -7,7 +7,7 @@ version = "1.0"
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-    resourcePrefix "human_"
+    //resourcePrefix "human_"
 
     defaultConfig {
         minSdkVersion 15
@@ -100,7 +100,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = "SlideDeleteLayout"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
-        name = "SlideDeleteLayout"  //发布到Bintray上的项目名字
+        name = "SlideDeleteLayout"  //发布到Bintray上的package的名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
