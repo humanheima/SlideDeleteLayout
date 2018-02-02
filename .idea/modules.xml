@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SlideDeleteLayout.iml" filepath="$PROJECT_DIR$/SlideDeleteLayout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SlideDeleteLayoutDemo.iml" filepath="$PROJECT_DIR$/SlideDeleteLayoutDemo.iml" />
+      <module fileurl="file://D:\github\SlideDeleteLayout\SlideDeleteLayoutDemo.iml" filepath="D:\github\SlideDeleteLayout\SlideDeleteLayoutDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/slidedeletelayout/slidedeletelayout.iml" filepath="$PROJECT_DIR$/slidedeletelayout/slidedeletelayout.iml" />
     </modules>

@@ -5,18 +5,15 @@ apply plugin: 'com.jfrog.bintray'
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
 version = "1.0"
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-    //resourcePrefix "human_"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    //resourcePrefix "hm_"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName version
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     lintOptions {
         abortOnError false
@@ -30,17 +27,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
 }
 
 def siteUrl = 'https://github.com/humanheima/SlideDeleteLayout'      // 项目的主页
 def gitUrl = 'https://github.com/humanheima/SlideDeleteLayout.git'   // Git仓库的url
-group = "com.hm.slidedeletelayout" // Maven Group ID for the artifact，一般填你唯一的包名
+group = "com.hm.kof97" // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -49,7 +42,7 @@ install {
                 packaging 'aar'
                 // Add your description here
                 description 'slidedeletelayout'
-                name 'Android customize layout for slide delete '  //项目描述
+                name 'Android customize layout for slide delete'  //项目描述
                 url siteUrl
                 // Set your license
                 licenses {
@@ -99,8 +92,8 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "SlideDeleteLayout"  //发布到Bintray的那个仓库里，默认账户有四个库，我们这里上传到maven库
-        name = "SlideDeleteLayout"  //发布到Bintray上的package的名字
+        repo = "KOF97"  //发布到Bintray的那个仓库里
+        name = "slidedeletelayout"  //KOF97仓库里的package名称
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

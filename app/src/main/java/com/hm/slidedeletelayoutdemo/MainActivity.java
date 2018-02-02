@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         stringList = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             stringList.add("string" + i);
@@ -117,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
 
             public VH(View itemView) {
                 super(itemView);
-                itemImageBook = (ImageView) itemView.findViewById(R.id.item_image_book);
-                itemTextBookName = (TextView) itemView.findViewById(R.id.item_text_book_name);
-                itemRlContent = (RelativeLayout) itemView.findViewById(R.id.item_rl_content);
-                itemTextBookIsbn = (TextView) itemView.findViewById(R.id.item_text_book_isbn);
-                itemTextRemove = (TextView) itemView.findViewById(R.id.item_text_remove);
+                itemImageBook = itemView.findViewById(R.id.item_image_book);
+                itemTextBookName = itemView.findViewById(R.id.item_text_book_name);
+                itemRlContent = itemView.findViewById(R.id.item_rl_content);
+                itemTextBookIsbn = itemView.findViewById(R.id.item_text_book_isbn);
+                itemTextRemove = itemView.findViewById(R.id.item_text_remove);
             }
         }
     }
