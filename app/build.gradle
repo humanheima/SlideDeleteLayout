@@ -25,6 +25,6 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
     //implementation project(':slidedeletelayout')
-    implementation 'com.hm.slidedeletelayout:slidedeletelayout:1.0'
+    implementation 'com.hm.kof97:slidedeletelayout:1.0'
     implementation 'com.brotherd.androidutilslibrary:androidutilslibrary:1.0.0'
 }

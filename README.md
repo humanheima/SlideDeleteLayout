@@ -1,9 +1,11 @@
 ### 侧滑删除布局
 参考自[SwipeDelMenuLayout](https://github.com/mcxtzhang/SwipeDelMenuLayout)
 
+![demo](demo.gif)
+
 **使用方式:** 
 
-    compile 'com.hm.kof97:slidedeletelayout:1.0'
+    implementation 'com.hm.kof97:slidedeletelayout:1.0'
 
 **recyclerview 布局文件**
 
