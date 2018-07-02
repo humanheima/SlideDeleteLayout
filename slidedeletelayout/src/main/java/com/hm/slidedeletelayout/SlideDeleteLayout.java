@@ -18,6 +18,7 @@ import android.view.animation.OvershootInterpolator;
  * Created by dumingwei on 2017/4/14.
  * 侧滑删除布局
  * 参考自张旭童的SwipeMenuLayout
+ * csdn博客地址
  * 张旭童的github项目地址 https://github.com/mcxtzhang/SwipeDelMenuLayout
  */
 public class SlideDeleteLayout extends ViewGroup {
@@ -358,4 +359,5 @@ public class SlideDeleteLayout extends ViewGroup {
             mExpandAnim.cancel();
         }
     }
+
 }

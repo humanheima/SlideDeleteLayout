@@ -1,5 +1,7 @@
 ### 侧滑删除布局
-参考自[SwipeDelMenuLayout](https://github.com/mcxtzhang/SwipeDelMenuLayout)
+参考链接：
+[史上最简单，一步集成侧滑(删除)菜单，高仿QQ、IOS](https://blog.csdn.net/zxt0601/article/details/53157090)
+[SwipeDelMenuLayout](https://github.com/mcxtzhang/SwipeDelMenuLayout)
 
 ![demo](demo.gif)
 
@@ -234,7 +236,37 @@ public class MainActivity extends AppCompatActivity {
 }
 
 ```
-  
+难点
+1. 如何让左滑布局显示在界面之外
+首先在`onMeasure`方法中，测量完所有的子View的宽度以后，调用`setMeasuredDimension`方法，
+存储最终的宽高。然后在`onLayout`方法中依次放置View即可。
+
+2. 如何处理多指滑动
+利用一个Boolean值，在ACTION_DOWN的时候判断是否继续接受触摸事件
+```java
+ //用来处理多指滑动的问题
+    private static boolean isTouching;
+```
+在`dispatchTouchEvent`方法中
+```java
+                case MotionEvent.ACTION_DOWN:
+                    isUserSlide = false;
+                    clickEvent = true;
+                    iosInterceptFlag = false;
+                    if (isTouching) {
+                        //如果有别的指头摸过了，那么就return false。
+                        return false;
+                    } else {
+                        //第一个摸的指头，改变标志位
+                        isTouching = true;
+                    }
+                  //...
+                    break;
+                case MotionEvent.ACTION_UP:
+                     isTouching = false;
+                break;
+```
+
 
     
     

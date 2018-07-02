@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyItemRemoved(position);
             }
         });
+        adapter.setOnItemLongClickListener(new OnItemLongClickListener() {
+            @Override
+            public void onLongClick(View view, int position) {
+                Toast.makeText(MainActivity.this, "onLongClick position=" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -59,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         private List<String> stringList;
         private OnItemClickListener onItemClickListener;
         private OnItemDeleteListener onItemDeleteListener;
+        private OnItemLongClickListener onItemLongClickListener;
 
         public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
             this.onItemClickListener = onItemClickListener;
@@ -66,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
         public void setOnItemDeleteListener(OnItemDeleteListener onItemDeleteListener) {
             this.onItemDeleteListener = onItemDeleteListener;
+        }
+
+        public void setOnItemLongClickListener(OnItemLongClickListener onItemLongClickListener) {
+            this.onItemLongClickListener = onItemLongClickListener;
         }
 
         public RvAdapter(Context context, List<String> stringList) {
@@ -87,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Log.e(TAG, "onClick: position=" + position);
                         onItemClickListener.onItemClick(v, holder.getAdapterPosition());
+                    }
+                });
+            }
+            if (onItemLongClickListener != null) {
+                holder.itemRlContent.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Log.e(TAG, "onLongClick: position=" + position);
+                        onItemLongClickListener.onLongClick(v, position);
+                        return true;
                     }
                 });
             }
@@ -128,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
 
     interface OnItemClickListener {
         void onItemClick(View view, int position);
+    }
+
+    interface OnItemLongClickListener {
+        void onLongClick(View view, int position);
     }
 
     interface OnItemDeleteListener {
