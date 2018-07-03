@@ -243,6 +243,9 @@ public class MainActivity extends AppCompatActivity {
 
 2. 如何处理多指滑动
 利用一个Boolean值，在ACTION_DOWN的时候判断是否继续接受触摸事件
+
+3. 如何向左滑出删除按钮 
+在 dispatchTouchEvent方法中 调用scrollBy((int) gap, 0);方法既可。
 ```java
  //用来处理多指滑动的问题
     private static boolean isTouching;
